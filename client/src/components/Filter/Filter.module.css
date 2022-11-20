@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Mitr&family=Pangolin&display=swap');
+.align{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    justify-items: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+.font{
+	 font-family: 'Mitr', sans-serif;
+	font-size: 25px;
+  letter-spacing: 2px;
+	color: whitesmoke;
+	font-weight: bold;
+	display: grid;
+    justify-items: center;
+    align-items: center;
+	text-shadow: 1px 3px 3px #000000;
+	color: #ffffffee;
+	mix-blend-mode: normal;
+}
+.btngrad {
+	background-image: linear-gradient(
+	  to right,
+	  #16222a 0%,
+	  #3a6073 51%,
+	  #16222a 100%
+	);
+	margin: 5px;
+	padding: 10px 25px;
+	text-align: center;
+	text-transform: uppercase;
+	transition: 0.5s;
+	background-size: 200% auto;
+	color: white;
+	box-shadow: 0 0 10px #eee;
+	border-radius: 10px;
+	display: block;
+	text-decoration: none;
+	border: none;
+	cursor: pointer;
+	font-family: "Mitr", sans-serif;
+	letter-spacing: 6px;
+  }
+  
+  
+  .btngrad:hover {
+	background-position: right center; /* change the direction of the change here */
+	color: #fff;
+	text-decoration: none;
+  }
+  .reset{
+	justify-content: center;
+	text-align: center;
+	font-size: 40px;
+	cursor: pointer;
+  }
