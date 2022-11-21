@@ -49,7 +49,8 @@ router.post("/", async (req, res) => {
       weightMax,
       temperament,
       life_span,
-      image
+      image,
+      createDb
     } = req.body;
     if (!name || !heightMin || !heightMax || !weightMin || !weightMax) return res.status(404).json('Faltan informacon obligatoria'); 
     try {  
@@ -61,6 +62,7 @@ router.post("/", async (req, res) => {
         weightMax,
         life_span,
         image,
+        createDb: true
       });
       let temperamentNewDog = await Temperament.findAll({
         where: { name: temperament },
@@ -71,5 +73,25 @@ router.post("/", async (req, res) => {
     console.log("malió sal el post /dogs:", e);
   }
 });
+
+
+router.delete('/:id', async (req, res) => {
+  const id = req.params.id 
+  try {
+    if (id) {
+      const deleteDog = await Dog.findOne({
+        where: { id: id }
+      })
+      if (deleteDog) {
+        await deleteDog.destroy()
+        res.status(200).send('The dog was successfully deleted from existence')
+      }
+      else res.status(404).send('Dog ID not found')
+    } else res.status(400).send("Something went wrong.");
+  } catch (e) {
+    console.log('error try catch', e);
+    res.status(400).send('Dog ID is wrong typed')
+  }
+})
 
 module.exports = router;

@@ -98,3 +98,16 @@ export function filterCreated(payload) {
     payload,
   };
 }
+
+export function deleteDog(id){
+  return async function (dispatch) {
+    let deletedog = await axios.delete(`/dogs/${id}`)
+    return (
+      dispatch({
+        type: 'DELETE_DOG',
+        payload: deletedog.data
+      })
+    )
+   
+  }
+}

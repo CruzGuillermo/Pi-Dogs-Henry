@@ -40,8 +40,6 @@ function CreatedDog() {
         [e.target.name]: e.target.value,
       })
     );
-
-    console.log(input);
   };
 
   const handleSelct = (e) => {

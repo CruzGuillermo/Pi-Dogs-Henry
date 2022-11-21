@@ -18,7 +18,8 @@ const DogsApi = async () => {
       image: el.image.url
         ? el.image.url
         : "https://static.nationalgeographic.es/files/styles/image_3200/public/10207.600x450.webp?w=400",
-      temperament: el.temperament ? el.temperament : 'Loyal, Alert, Calm'
+      temperament: el.temperament ? el.temperament : 'Loyal, Alert, Calm',
+      createDb: false
     };
   });
   return infoApi;

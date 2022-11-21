@@ -1,60 +1,126 @@
-@import url('https://fonts.googleapis.com/css2?family=Itim&family=Mitr&family=Pangolin&display=swap');
-.align{
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 1rem;
-    justify-items: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.4);
+@import url("https://fonts.googleapis.com/css2?family=Itim&family=Mitr&family=Pangolin&display=swap");
+.align {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  justify-items: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
-
-.font{
-	 font-family: 'Mitr', sans-serif;
-	font-size: 25px;
+.font {
+  font-family: "Mitr", sans-serif;
+  font-size: 25px;
   letter-spacing: 2px;
-	color: whitesmoke;
-	font-weight: bold;
-	display: grid;
-    justify-items: center;
-    align-items: center;
-	text-shadow: 1px 3px 3px #000000;
-	color: #ffffffee;
-	mix-blend-mode: normal;
+  color: whitesmoke;
+  font-weight: bold;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  text-shadow: 1px 3px 3px #000000;
+  color: #ffffffee;
+  mix-blend-mode: normal;
 }
 .btngrad {
-	background-image: linear-gradient(
-	  to right,
-	  #16222a 0%,
-	  #3a6073 51%,
-	  #16222a 100%
-	);
-	margin: 5px;
-	padding: 10px 25px;
-	text-align: center;
-	text-transform: uppercase;
-	transition: 0.5s;
-	background-size: 200% auto;
-	color: white;
-	box-shadow: 0 0 10px #eee;
-	border-radius: 10px;
-	display: block;
-	text-decoration: none;
-	border: none;
-	cursor: pointer;
-	font-family: "Mitr", sans-serif;
-	letter-spacing: 6px;
+  background-image: linear-gradient(
+    to right,
+    #16222a 0%,
+    #3a6073 51%,
+    #16222a 100%
+  );
+  margin: 5px;
+  padding: 10px 25px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 10px #eee;
+  border-radius: 10px;
+  display: block;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-family: "Mitr", sans-serif;
+  letter-spacing: 6px;
+}
+
+.btngrad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+.button {
+  width: 80px;
+  height: 50px;
+  position: relative;
+  cursor: pointer;
+  padding: 1px 10px;
+  border-radius: 7px;
+  border: 1px solid rgb(61, 106, 255);
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.button:hover {
+  background: rgb(61, 106, 255);
+  box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.button:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+.button::before {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
   }
-  
-  
-  .btngrad:hover {
-	background-position: right center; /* change the direction of the change here */
-	color: #fff;
-	text-decoration: none;
+
+  50% {
+    opacity: 1;
   }
-  .reset{
-	justify-content: center;
-	text-align: center;
-	font-size: 40px;
-	cursor: pointer;
+
+  to {
+    opacity: 0;
+    left: 100%;
   }
+}
+
+.button:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}

@@ -65,10 +65,10 @@ function Filter({
         </select>
       </div>
       <div>
-        <label className={styles.font}>Reset</label>
-        <span onClick={(e) => handleReset(e)} className={styles.reset}>
-          ✅
-        </span>
+        {/* <label className={styles.font}>Reset</label> */}
+        <button onClick={(e) => handleReset(e)} className={styles.button}>
+          Reset
+        </button>
       </div>
     </div>
   );

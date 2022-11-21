@@ -24,7 +24,7 @@
   font-family: "Mitr", sans-serif;
   width: 500px;
   overflow: auto;
- text-decoration: none;
+  text-decoration: none;
   height: auto;
 }
 
@@ -34,19 +34,19 @@
   width: 250px;
   margin-left: 1%;
 }
-.id{
+.id {
   font-family: "Mitr", sans-serif;
   letter-spacing: 2px;
   color: #f0eeebe3;
 }
 .font {
- font-family: "Mitr", sans-serif;
+  font-family: "Mitr", sans-serif;
   text-align: center;
   color: #f0eeebe3;
 }
 
 .fontName {
- font-family: "Mitr", sans-serif;
+  font-family: "Mitr", sans-serif;
   font-size: 30px;
   margin: 1%;
   color: #d9daddef;
@@ -94,12 +94,44 @@
   border-radius: 10px;
   display: block;
   text-decoration: none;
-  font-family: 'Mitr', sans-serif;
+  font-family: "Mitr", sans-serif;
   letter-spacing: 1px;
-  text-decoration: none;
 }
 
 .btngrad:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btnDelete {
+  width: 460px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-image: linear-gradient(
+    to right,
+    #e52d27 0%,
+    #b31217 51%,
+    #e52d27 100%
+  );
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px rgb(0, 0, 0);
+  border-radius: 10px;
+  display: block;
+  font-family: "Mitr", sans-serif;
+  letter-spacing: 3px;
+  text-decoration: none;
+  border: none;
+}
+
+.btnDelete:hover {
   background-position: right center; /* change the direction of the change here */
   color: #fff;
   text-decoration: none;

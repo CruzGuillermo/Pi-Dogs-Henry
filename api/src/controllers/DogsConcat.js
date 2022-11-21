@@ -18,7 +18,8 @@ const DogsConcat = async () => {
           : "https://static.nationalgeographic.es/files/styles/image_3200/public/10207.600x450.webp?w=400",
         temperament: el.temperaments.map(e => {
           return e.name
-        }).join(", ")
+        }).join(", "),
+        createDb: el.createDb === false ? false : true 
       };
     });
     const DbConcatApi = infoDataApi.concat(infoDataDB)

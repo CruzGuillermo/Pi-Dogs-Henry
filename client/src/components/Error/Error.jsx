@@ -5,14 +5,13 @@ function Error() {
   return (
   
       <div  className={s.container}>
+         <h3>Dog Not Found</h3>
         <img
           src={NotFound}
           alt=""
-          width={450}
-          height={350}
-        
+          width={400}
+          height={300}
         />
-        <h3>Dog Not Found</h3>
       </div>
 
   );
