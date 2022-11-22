@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
       );
       DogFilter.length
         ? res.status(200).send(DogFilter)
-        : res.status(400).send(`Dog ${name} not fount`);
+        : res.status(400).send(`Perro ${name} no encontrado`);
     } else {
       res.status(201).send(DogData);
     }
@@ -31,7 +31,7 @@ router.get("/:idRaza", async (req, res) => {
       const DogFilterID = DogData.filter((dog) => dog.id == idRaza);
       DogFilterID.length
         ? res.status(201).send(DogFilterID)
-        : res.status(400).send(`dog id: ${idRaza} not exist`);
+        : res.status(400).send(`Perro con ID: ${idRaza} no existe!`);
     }
   } catch (error) {
     console.log(error);
@@ -68,7 +68,7 @@ router.post("/", async (req, res) => {
         where: { name: temperament },
       });
       newDog.addTemperament(temperamentNewDog);
-      res.status(201).send("Dog created succcessfully!");
+      res.status(200).send('Perro creado con exito!');
   } catch (e) {
     console.log("malió sal el post /dogs:", e);
   }
@@ -84,13 +84,13 @@ router.delete('/:id', async (req, res) => {
       })
       if (deleteDog) {
         await deleteDog.destroy()
-        res.status(200).send('The dog was successfully deleted from existence')
+        res.status(200).send('Perro eliminado correctamente')
       }
-      else res.status(404).send('Dog ID not found')
-    } else res.status(400).send("Something went wrong.");
+      else res.status(404).send('Perro con el id no encontrado')
+    } else res.status(400).send("Salio algo mal :( ");
   } catch (e) {
     console.log('error try catch', e);
-    res.status(400).send('Dog ID is wrong typed')
+    res.status(400).send('Puede ser que escribiste mal el id ?')
   }
 })
 
