@@ -30,7 +30,7 @@ router.get("/:idRaza", async (req, res) => {
     if (idRaza) {
       const DogFilterID = DogData.filter((dog) => dog.id == idRaza);
       DogFilterID.length
-        ? res.status(201).send(DogFilterID)
+        ? res.status(200).send(DogFilterID)
         : res.status(400).send(`Perro con ID: ${idRaza} no existe!`);
     }
   } catch (error) {
@@ -50,7 +50,6 @@ router.post("/", async (req, res) => {
       temperament,
       life_span,
       image,
-      createDb
     } = req.body;
     if (!name || !heightMin || !heightMax || !weightMin || !weightMax) return res.status(404).json('Faltan informacon obligatoria'); 
     try {  

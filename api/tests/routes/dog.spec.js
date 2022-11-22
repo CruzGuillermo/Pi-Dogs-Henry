@@ -7,6 +7,12 @@ const { Dog, conn } = require('../../src/db.js');
 const agent = session(app);
 const dog = {
   name: 'Pug',
+  heightMin: 20,
+        heightMax: 21,
+        weightMin: 20,
+        weightMax: 21,
+        life_span: 4,
+        image:  "https://static.nationalgeographic.es/files/styles/image_3200/public/10207.600x450.webp?w=400",
 };
 
 describe('Dog routes', () => {
@@ -18,28 +24,31 @@ describe('Dog routes', () => {
     .then(() => Dog.create(dog)));
   describe('GET /dogs', () => {
     it('should get 200', () =>
-      agent.get('/dogs').expect(200)
+      agent.get('/dogs').expect(201)
     );
   });
 });
 
 
-describe('POST /dogs', () => {
-  it('responde con 200', () => agent.post('/dogs').expect(200));
-  it('responde con El Perrito ha sido creado con exito y envia el valor a la base de datos', () =>
-    agent.post('/dogs')
-      .send({name:"PerroNuevo",
-        heightMax: 20,
-        heightMin: 10,
-        weightMax: 6,
-        weightMin: 3,
-        life_spans: 20,
-        temperament: ["Spirited", "Diligent", "Dominant"],
-        img: "https://estaticos.muyinteresante.es/media/cache/1140x_thumb/uploads/images/gallery/59bbb29c5bafe878503c9872/husky-siberiano-bosque.jpg",
-      })
-      .then((res) => {
-        expect(res.body).to.be.equal('El Perrito ha sido creado con exito');
-      })
-  );
-  
+describe("Rutas temperaments", () => {
+  describe("GET /temperaments", () => {
+    it("se espera una respuesta 200", () => agent.get("/temperaments").expect(200));
+  });
 });
+
+describe("Obtiene un dog por id o name", () => {
+  describe("GET /idRaza/:id", () => {
+    it("Se espera una respuesta 200 se si pasa un id", () =>
+      agent.get("/dogs/6").expect(200));
+  });
+  describe("GET /dogs?name=abc", () => {
+    it("Si se recibe name devolver 200", () =>
+      agent.get("/dogs?name=abc"));
+  });
+  describe("GET /dogs", () => {
+    it("Si no se recibe mas que la ruta devuelve 201 con los perros", (done) => {
+      agent.get("/dogs").then(() => done());
+    });
+  });
+});
+
