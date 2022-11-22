@@ -1,9 +1,7 @@
 export function validations({ name, weightMin, weightMax, heightMin, heightMax, life_span }) {
   let error = {}
   if (!name) { error.name = 'Se Requiere Un Nombre' }
-  // else if (!/^([a-zñáéíóúA-Z][^\d@+.,-_{}]+[\s]?)+$/.test(name)) {
-  //   error.name = 'Nombre Invalido'
-  // }
+
   else if (!/^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/.test(name)) {
     error.name = "Nombre Invalido";
   }

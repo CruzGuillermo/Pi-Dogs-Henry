@@ -150,7 +150,8 @@
   border: 1px solid #006eff;
   cursor: pointer;
   font-family: "Mitr", sans-serif;
-  letter-spacing: 9px;
+  justify-content: center;
+  text-align: center;
 }
 
 .btnDelete:hover {
