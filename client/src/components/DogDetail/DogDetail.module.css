@@ -15,7 +15,7 @@
   margin-bottom: 60%;
   margin-left: 33%;
   margin-top: 0%;
-  background: rgba(53, 49, 46, 0.568);
+  background: rgba(53, 49, 46, 0.8);
   border-radius: 10px;
   border: 1px solid #666666;
   width: 50%;
@@ -37,12 +37,14 @@
 .id {
   font-family: "Mitr", sans-serif;
   letter-spacing: 2px;
-  color: #f0eeebe3;
+  color: white;
 }
 .font {
   font-family: "Mitr", sans-serif;
+  font-weight: 900;
+  letter-spacing: 1px;
   text-align: center;
-  color: #f0eeebe3;
+  color: white
 }
 
 .fontName {
@@ -103,11 +105,11 @@
   color: #fff;
   text-decoration: none;
 }
-
+.divSeparador {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 .btnDelete {
-  width: 460px;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
   background-image: linear-gradient(
     to right,
@@ -115,13 +117,14 @@
     #b31217 51%,
     #e52d27 100%
   );
+  font-weight: 600;
   margin: 10px;
   padding: 15px 45px;
-  text-align: center;
+  justify-content: space-around;
   text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;
-  color: white;
+  color: rgb(0, 0, 0);
   box-shadow: 0 0 20px rgb(0, 0, 0);
   border-radius: 10px;
   display: block;
@@ -132,6 +135,36 @@
 }
 
 .btnDelete:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.btnEdit {
+  background-image: linear-gradient(
+    to right,
+    #ff4e50 0%,
+    #f9d423 51%,
+    #ff4e50 100%
+  );
+  font-weight: 600;
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  box-shadow: 0 0 20px rgb(0, 0, 0);
+  letter-spacing: 3px;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  border-radius: 10px;
+  display: block;
+  border: none;
+  font-family: "Mitr", sans-serif;
+}
+
+.btnEdit:hover {
   background-position: right center; /* change the direction of the change here */
   color: #fff;
   text-decoration: none;

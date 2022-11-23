@@ -96,10 +96,14 @@ function rootReducer(state = initialstate, action) {
         ...state,
         dogs: filterCreated,
       };
-      case "DELETE_DOG":
-        return {
-          ...state,
-        }
+    case "DELETE_DOG":
+      return {
+        ...state,
+      };
+    case "DOG_EDIT":
+      return {
+        ...state,
+      };
     case "LOADING":
       return {
         ...state,

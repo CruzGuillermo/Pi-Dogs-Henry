@@ -111,3 +111,16 @@ export function deleteDog(id){
    
   }
 }
+
+export function editDog (payload, id) {
+  return async function (dispatch){
+    var edit = await axios.put(`/dogs/${id}/edit`, payload)
+    return(
+      dispatch({
+        type: 'DOG_EDIT',
+        payload: edit.data
+      })
+    )
+  }
+}
+

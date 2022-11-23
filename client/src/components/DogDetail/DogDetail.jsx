@@ -8,7 +8,7 @@ import s from "./DogDetail.module.css";
 function DogDetail() {
   const dispatch = useDispatch();
   const detail = useSelector((state) => state.detail);
-  const history = useHistory()
+  const history = useHistory();
   const loading = useSelector((state) => state.loading);
   const params = useParams();
 
@@ -19,10 +19,13 @@ function DogDetail() {
   const handleDelete = (e) => {
     e.preventDefault();
     dispatch(deleteDog(params.id));
-    alert("Dog eliminado con exito")
+    alert("Dog eliminado con exito");
     setTimeout(() => {
       history.push("/home");
     }, 3000);
+  };
+  const handleEditDog = () => {
+    history.push(`/${params.id}/edit`);
   };
 
   console.log(detail, "soy detalle de dogs");
@@ -47,14 +50,25 @@ function DogDetail() {
                 width={300}
                 className={s.imgCard}
               />
-              <h3 className={s.font}>Peso Minimo: {dog.weightMin} kg</h3>
-              <h3 className={s.font}>Peso Maximo: {dog.weightMax} kg</h3>
-              <h3 className={s.font}>Altura Minima: {dog.heightMin} Cm</h3>
-              <h3 className={s.font}>Altura Maxima: {dog.heightMax} Cm</h3>
-              <h3 className={s.font}>Temperamentos: {dog.temperament}</h3>
+              <h4 className={s.font}>Peso Minimo: {dog.weightMin} kg</h4>
+              <h4 className={s.font}>Peso Maximo: {dog.weightMax} kg</h4>
+              <h4 className={s.font}>Altura Minima: {dog.heightMin} Cm</h4>
+              <h4 className={s.font}>Altura Maxima: {dog.heightMax} Cm</h4>
+              <h4 className={s.font}>Tiempo de Vida: {dog.life_span}</h4>
+              <h4 className={s.font}>Temperamentos: {dog.temperament}</h4>
+              <div className={s.divSeparador}>
               {dog.createDb === true ? (
-                <button className={s.btnDelete} onClick={(e)=> handleDelete(e)}>Eliminar Dog</button>
+                <button className={s.btnEdit} onClick={handleEditDog}>Editar Dog</button>
               ) : null}
+              {dog.createDb === true ? (
+                <button
+                  className={s.btnDelete}
+                  onClick={(e) => handleDelete(e)}
+                >
+                  Eliminar Dog
+                </button>
+              ) : null}
+              </div>
             </div>
           ))
         ) : (

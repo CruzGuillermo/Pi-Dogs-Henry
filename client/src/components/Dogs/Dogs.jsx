@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Dogs.css";
 
-function Dogs({ id, name, image, temperament }) {
+function Dogs({ id, name, image, temperament, weightMin, weightMax }) {
   return (
     <Link to={`/home/${id}`} className="containerPadre">
       <div className="container">
@@ -12,6 +12,7 @@ function Dogs({ id, name, image, temperament }) {
           </div>
           <div className="content">
             <p>{name}</p>
+            <p>{weightMin} - {weightMax} kg</p>
             <p>Temperamentos: {temperament}</p>
           </div>
         </div>

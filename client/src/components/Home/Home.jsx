@@ -120,6 +120,8 @@ function Home() {
                 name={dog.name}
                 image={dog.image}
                 temperament={dog.temperament}
+                weightMin={dog.weightMin}
+                weightMax={dog.weightMax}
               />
             ))
           ) : (

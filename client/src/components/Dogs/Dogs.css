@@ -27,14 +27,13 @@
     margin : 8px 4px;
     padding : 10px 5px;
     color: white;
-    
     display : flex;
     flex-direction : column;
     transition : 0.3s ease-in-out;
     border-radius : 15px;
   }
   .container .card:hover {
-    height : 250px;    
+    height : 290px;    
   }
   
   
@@ -42,10 +41,8 @@
     position : relative;
     width : 260px;
     height : 260px;
-    
     top : -40%;
     left: 8px;
-    /* box-shadow : 0 5px 20px rgba(0,0,0,0.2); */
     z-index : 1;
   }
   
@@ -58,9 +55,7 @@
     position : relative;
     top : -140px;
     padding : 5px 5px;
-    
     text-align : center;
-    
     visibility : hidden;
     opacity : 0;
     transition : 0.3s ease-in-out;
