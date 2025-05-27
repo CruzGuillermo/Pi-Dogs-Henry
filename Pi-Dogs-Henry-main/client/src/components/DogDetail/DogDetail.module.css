@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&family=Mitr&family=Pangolin&display=swap");
+.container {
+  background-image: url("../image/detail.jpg");
+  background-size: cover;
+  position: absolute;
+  text-align: center;
+  background-position-x: center;
+  width: 100%;
+  height: 120%;
+  text-decoration: none;
+}
+
+.boxCard {
+  text-decoration: none;
+  margin-bottom: 60%;
+  margin-left: 33%;
+  margin-top: 0%;
+  background: rgba(53, 49, 46, 0.8);
+  border-radius: 10px;
+  border: 1px solid #666666;
+  width: 50%;
+  height: 11%;
+  font-weight: bold;
+  font-family: "Mitr", sans-serif;
+  width: 500px;
+  overflow: auto;
+  text-decoration: none;
+  height: auto;
+}
+
+.imgCard {
+  border-radius: 55px;
+  height: 200px;
+  width: 250px;
+  margin-left: 1%;
+}
+.id {
+  font-family: "Mitr", sans-serif;
+  letter-spacing: 2px;
+  color: white;
+}
+.font {
+  font-family: "Mitr", sans-serif;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-align: center;
+  color: white
+}
+
+.fontName {
+  font-family: "Mitr", sans-serif;
+  font-size: 30px;
+  margin: 1%;
+  color: #d9daddef;
+}
+.backHome {
+  margin-right: 84%;
+  font-family: "Combo", cursive;
+  border: 1px solid #ada9a9;
+  font-size: 19px;
+  border-radius: 60%;
+  border: 1px solid #2c231d;
+  background: #4137257a;
+  color: #f1ebeb9f;
+  border-radius: 22px;
+  -webkit-box-shadow: #ffa0a094 0px 0px 40px 0px;
+  -moz-box-shadow: #ffa0a05e 0px 0px 40px 0px;
+  box-shadow: #ffa0a093 0px 0px 40px 0px;
+  text-shadow: #734343 1px 1px 1px;
+  width: 400px;
+  height: 40px;
+}
+.buttonsDiv {
+  margin: 2%;
+  width: 900px;
+}
+
+.btngrad {
+  background-image: linear-gradient(
+    to right,
+    #16222a 0%,
+    #3a6073 51%,
+    #16222a 100%
+  );
+  text-decoration: none;
+  width: 460px;
+  cursor: pointer;
+  margin: 10px;
+  padding: 10px 25px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  text-decoration: none;
+  font-family: "Mitr", sans-serif;
+  letter-spacing: 1px;
+}
+
+.btngrad:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+.divSeparador {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.btnDelete {
+  cursor: pointer;
+  background-image: linear-gradient(
+    to right,
+    #e52d27 0%,
+    #b31217 51%,
+    #e52d27 100%
+  );
+  font-weight: 600;
+  margin: 10px;
+  padding: 15px 45px;
+  justify-content: space-around;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: rgb(0, 0, 0);
+  box-shadow: 0 0 20px rgb(0, 0, 0);
+  border-radius: 10px;
+  display: block;
+  font-family: "Mitr", sans-serif;
+  letter-spacing: 3px;
+  text-decoration: none;
+  border: none;
+}
+
+.btnDelete:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.btnEdit {
+  background-image: linear-gradient(
+    to right,
+    #ff4e50 0%,
+    #f9d423 51%,
+    #ff4e50 100%
+  );
+  font-weight: 600;
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  box-shadow: 0 0 20px rgb(0, 0, 0);
+  letter-spacing: 3px;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  border-radius: 10px;
+  display: block;
+  border: none;
+  font-family: "Mitr", sans-serif;
+}
+
+.btnEdit:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}

@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/Pi-Dogs-Henry/static/css/main.09f0279b.chunk.css",
+    "main.js": "/Pi-Dogs-Henry/static/js/main.189f6d66.chunk.js",
+    "main.js.map": "/Pi-Dogs-Henry/static/js/main.189f6d66.chunk.js.map",
+    "runtime-main.js": "/Pi-Dogs-Henry/static/js/runtime-main.2d840edd.js",
+    "runtime-main.js.map": "/Pi-Dogs-Henry/static/js/runtime-main.2d840edd.js.map",
+    "static/js/2.37043d9c.chunk.js": "/Pi-Dogs-Henry/static/js/2.37043d9c.chunk.js",
+    "static/js/2.37043d9c.chunk.js.map": "/Pi-Dogs-Henry/static/js/2.37043d9c.chunk.js.map",
+    "static/js/3.23407b9e.chunk.js": "/Pi-Dogs-Henry/static/js/3.23407b9e.chunk.js",
+    "static/js/3.23407b9e.chunk.js.map": "/Pi-Dogs-Henry/static/js/3.23407b9e.chunk.js.map",
+    "index.html": "/Pi-Dogs-Henry/index.html",
+    "static/css/main.09f0279b.chunk.css.map": "/Pi-Dogs-Henry/static/css/main.09f0279b.chunk.css.map",
+    "static/js/2.37043d9c.chunk.js.LICENSE.txt": "/Pi-Dogs-Henry/static/js/2.37043d9c.chunk.js.LICENSE.txt",
+    "static/media/DogDetail.module.css": "/Pi-Dogs-Henry/static/media/detail.0e64bf5f.jpg",
+    "static/media/doge.7e3cd4aa.gif": "/Pi-Dogs-Henry/static/media/doge.7e3cd4aa.gif",
+    "static/media/DogEdit.module.css": "/Pi-Dogs-Henry/static/media/edit1.aa1e19f9.jpg",
+    "static/media/Home.module.css": "/Pi-Dogs-Henry/static/media/landing.d2a792de.jpg",
+    "static/media/LandingPage.module.css": "/Pi-Dogs-Henry/static/media/landing3.2349c7eb.jpg",
+    "static/media/CreateDog.module.css": "/Pi-Dogs-Henry/static/media/landingCreate6.8fe37136.jpg",
+    "static/media/logo.741445b3.png": "/Pi-Dogs-Henry/static/media/logo.741445b3.png",
+    "static/media/not found.a6191d49.png": "/Pi-Dogs-Henry/static/media/not found.a6191d49.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2d840edd.js",
+    "static/js/2.37043d9c.chunk.js",
+    "static/css/main.09f0279b.chunk.css",
+    "static/js/main.189f6d66.chunk.js"
+  ]
+}
