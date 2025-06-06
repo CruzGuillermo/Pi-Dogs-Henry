@@ -32,4 +32,10 @@ server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
   res.status(status).send(message);
 });
 
+server.get('/ping', (req, res) => {
+  res.send('pong');
+});
+
+
+server.use('/', routes);
 module.exports = server;
