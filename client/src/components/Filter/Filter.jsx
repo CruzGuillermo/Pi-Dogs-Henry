@@ -12,53 +12,44 @@ function Filter({
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="container">
-      {/* Botón hamburguesa solo visible en móvil */}
+    <section className="filterSection">
       <button
-        className="hamburger"
+        className="hamburgerBtn"
         onClick={() => setOpen(!open)}
         aria-label="Toggle filters"
         aria-expanded={open}
       >
-        <div className={`bar ${open ? "bar1Active" : ""}`}></div>
-        <div className={`bar ${open ? "bar2Active" : ""}`}></div>
-        <div className={`bar ${open ? "bar3Active" : ""}`}></div>
+        <span className={`bar ${open ? "active1" : ""}`}></span>
+        <span className={`bar ${open ? "active2" : ""}`}></span>
+        <span className={`bar ${open ? "active3" : ""}`}></span>
       </button>
 
-      {/* Contenedor de filtros */}
-      <div className={`align ${open ? "show" : ""}`}>
-        <div>
-          <label className="font">A-Z ⇅</label>
+      <div className={`filtersContainer ${open ? "open" : ""}`}>
+        {/* 4 filtros */}
+        <div className="filterGroup">
+          <label>A-Z ⇅</label>
           <select onChange={(e) => handleSort(e)}>
             <option hidden value="">
               Option
             </option>
-            <option className="selectOrder" value="asc">
-              A a Z
-            </option>
-            <option className="selectOrder" value="des">
-              Z a A
-            </option>
+            <option value="asc">A a Z</option>
+            <option value="des">Z a A</option>
           </select>
         </div>
 
-        <div>
-          <label className="font">Peso ⇅</label>
+        <div className="filterGroup">
+          <label>Peso ⇅</label>
           <select onChange={(e) => handleSortWeight(e)}>
             <option hidden value="">
               Option
             </option>
-            <option className="selectOrder" value="weightasc">
-              Max
-            </option>
-            <option className="selectOrder" value="weightdes">
-              Min
-            </option>
+            <option value="weightasc">Max</option>
+            <option value="weightdes">Min</option>
           </select>
         </div>
 
-        <div>
-          <label className="font">Creados/Existentes</label>
+        <div className="filterGroup">
+          <label>Creados/Existentes</label>
           <select onChange={(e) => handleFilterCreated(e)}>
             <option hidden value="">
               Option
@@ -69,28 +60,29 @@ function Filter({
           </select>
         </div>
 
-        <div>
-          <label className="font">Temperamentos</label>
+        <div className="filterGroup">
+          <label>Temperamentos</label>
           <select onChange={(e) => handleFilterDog(e)}>
             <option hidden value="">
               Option
             </option>
             <option value="all">Todos</option>
-            {temperaments.map((data) => (
-              <option key={data.id} value={data.name}>
-                {data.name}
+            {temperaments.map((t) => (
+              <option key={t.id} value={t.name}>
+                {t.name}
               </option>
             ))}
           </select>
         </div>
 
-        <div>
-          <button onClick={(e) => handleReset(e)} className="button">
+        {/* Botón Reset dentro del contenedor para que esté en hamburguesa */}
+        <div className="resetGroup">
+          <button className="resetBtn" onClick={handleReset}>
             Reset
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

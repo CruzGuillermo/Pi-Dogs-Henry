@@ -3,9 +3,8 @@ const DogsDb = require("./DogsDb");
 
 const DogsConcat = async () => {
   const infoDataApi = await DogsApi();
-  let infoDataDB = await DogsDb();
+  const infoDataDB = await DogsDb();
 
-  // Solo dejamos perros que tienen UUID (es decir, que son de la base de datos)
   const filteredDbDogs = infoDataDB.map((el) => {
     return {
       id: el.id,
@@ -23,8 +22,13 @@ const DogsConcat = async () => {
     };
   });
 
-  // Devolvés solo los de la base de datos con UUID (no mezclás con los de la API)
-  return filteredDbDogs;
+  // Evitamos nombres duplicados entre API y DB
+  const apiNames = new Set(infoDataApi.map((dog) => dog.name));
+  const dbDogsFilteredByName = filteredDbDogs.filter(
+    (dog) => !apiNames.has(dog.name)
+  );
+
+  return [...infoDataApi, ...dbDogsFilteredByName];
 };
 
 module.exports = DogsConcat;

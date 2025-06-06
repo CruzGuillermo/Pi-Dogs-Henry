@@ -1,75 +1,83 @@
 @import url("https://fonts.googleapis.com/css2?family=Itim&family=Mitr&display=swap");
 
+/* Variables CSS */
+
+/* Contenedor principal */
 .contenedorPadre {
-  /* background: url("../image/landing.jpg") no-repeat center center fixed; */
   background-size: cover;
   min-height: 100vh;
-  font-family: var(--font-family-base);
+  font-family: var(--font-base);
   color: var(--color-text-primary);
   padding-bottom: var(--spacing-lg);
   display: flex;
   flex-direction: column;
 }
 
-/* Header */
-.header {
+/* Header cambiado a topSection */
+.topSection {
+  width: 100%;
   height: 120px;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--color-bg-overlay);
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0 var(--spacing-lg);
+  box-shadow: var(--shadow-light);
 }
 
+/* Título y elementos del header */
 .title {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  font-family: 'Mitr', sans-serif;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  font-family: var(--font-base);
 }
 
-.logo {
-  width: 100px;
-  height: auto;
-  background-color: transparent;
+/* Subcontenedores */
+.search-wrapper,
+.create-button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Search and create button */
-.search {
-  flex: 1;
-  margin: 0 var(--spacing-md);
-}
-
+/* Botón gradiente */
 .btngrad {
-  background-image: linear-gradient(
-    to right,
-    #16222a 0%,
-    #3a6073 51%,
-    #16222a 100%
-  );
+  background-image: linear-gradient(to right, #16222a 0%, #3a6073 51%, #16222a 100%);
   margin-left: var(--spacing-md);
   padding: var(--spacing-sm) var(--spacing-lg);
   text-align: center;
   text-transform: uppercase;
-  transition: 0.5s;
+  transition: background-position 0.5s ease, color 0.3s ease, box-shadow 0.3s ease;
   background-size: 200% auto;
   color: var(--color-text-primary);
   box-shadow: 0 0 20px #eee;
   border-radius: var(--border-radius-md);
   text-decoration: none;
-  font-family: 'Mitr', sans-serif;
+  font-family: var(--font-base);
   letter-spacing: 1px;
   white-space: nowrap;
+  cursor: pointer;
+  border: none;
+
+  /* Nuevo para control de tamaño */
+  max-width: 220px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.btngrad:hover {
+.btngrad:hover,
+.btngrad:focus {
   background-position: right center;
   color: #fff;
-  text-decoration: none;
   box-shadow: 0 0 20px var(--color-primary);
+  outline: none;
 }
 
-/* Functional filters */
+/* Funcionalidades y filtros */
 .functional {
   display: flex;
   justify-content: center;
@@ -85,36 +93,36 @@
   justify-content: center;
 }
 
-/* Selects */
+/* Select */
 select {
   cursor: pointer;
   width: 200px;
   font-size: 1rem;
   border: var(--border-width) solid var(--color-border);
   color: var(--color-text-primary);
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--color-bg-overlay);
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-xs) var(--spacing-sm);
   margin: var(--spacing-sm) 0;
-  font-family: 'Mitr', sans-serif;
+  font-family: var(--font-base);
   letter-spacing: 1px;
   transition: background-color 0.3s ease;
 }
 
 select:hover,
 select:focus {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: var(--color-bg-overlay-hover);
   outline: none;
 }
 
-/* Pagination */
+/* Paginado */
 .paginado {
   display: flex;
   justify-content: center;
   margin: var(--spacing-md) 0;
 }
 
-/* Main content area */
+/* Contenido principal */
 .main {
   flex: 1;
   display: flex;
@@ -122,20 +130,37 @@ select:focus {
   padding: 0 var(--spacing-lg) var(--spacing-xl);
 }
 
-/* Cards grid */
+/* Cards */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--spacing-lg);
   justify-content: center;
-  font-family: 'Mitr', sans-serif;
+  font-family: var(--font-base);
 }
 
-/* Responsive tweaks */
+/* Home container */
+.homeContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Grid para filtros */
+.filterGridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  padding: 10px 0;
+  width: 100%;
+}
+
+/* Responsive */
 
 /* Tablets */
 @media (max-width: 1024px) {
-  .header {
+  .topSection {
     height: auto;
     padding: var(--spacing-md);
     flex-wrap: wrap;
@@ -143,27 +168,30 @@ select:focus {
 
   .title {
     flex-direction: column;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-md);
   }
 
-  .search {
-    margin: var(--spacing-sm) 0;
+  .search-wrapper,
+  .create-button-wrapper {
     width: 100%;
+    justify-content: center;
   }
 
   .btngrad {
-    width: 100%;
-    margin: var(--spacing-sm) 0 0 0;
-    padding: var(--spacing-md);
+    max-width: none;
+    width: auto;
+    margin-left: 0;
+    margin-top: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    min-width: 140px;
   }
 
   .filters {
-    justify-content: center;
     gap: var(--spacing-sm);
   }
 }
 
-/* Mobile phones */
+/* Móviles */
 @media (max-width: 600px) {
   .cards {
     grid-template-columns: 1fr;
@@ -177,5 +205,12 @@ select:focus {
   .functional {
     flex-direction: column;
     padding: 0 var(--spacing-md);
+  }
+
+  .btngrad {
+    max-width: none;
+    width: 100%;
+    margin-left: 0;
+    padding: var(--spacing-md);
   }
 }

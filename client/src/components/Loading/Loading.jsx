@@ -1,17 +1,18 @@
 import React from "react";
 import loading from "../image/doge.gif";
-import s from "./Loading.module.css";
+import "./Loading.css";
 
 function Loading() {
   return (
-    <div className={s.containerpadre}>
-      <img
-        src={loading}
-        alt="loading"
-        width={500}
-        height={320}
-        className={s.container}
-      />
+    <div className="loading-container">
+      <div className="loading-content">
+        <img
+          src={loading}
+          alt="loading"
+          className="loading-image"
+        />
+        <p className="loading-text">Cargando...</p>
+      </div>
     </div>
   );
 }

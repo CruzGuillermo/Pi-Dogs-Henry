@@ -1,0 +1,68 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Itim&family=Mitr&family=Pangolin&display=swap');
+
+.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  width: 100%;
+  padding: var(--spacing-sm);
+  box-sizing: border-box;
+}
+
+.Buscador {
+  flex: 1 1 200px;
+  max-width: 250px;
+  min-width: 180px;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  padding-left: 35px;
+  background-image: url(https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-32.png);
+  background-repeat: no-repeat;
+  background-position: 8px center;
+  background-size: 20px;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  box-shadow: var(--shadow-light);
+  transition: all 0.3s ease;
+}
+
+.Buscador::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.Buscador:focus {
+  border-color: var(--color-primary);
+  outline: none;
+  box-shadow: 0 0 5px var(--color-primary);
+}
+
+.btngrad {
+  flex: 0 0 auto;
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary) 0%,
+    var(--color-secondary) 51%,
+    var(--color-primary) 100%
+  );
+  background-size: 200% auto;
+  color: var(--color-text-on-dark);
+  border: none;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: var(--shadow-medium);
+  transition: background-position 0.4s ease;
+  white-space: nowrap;
+}
+
+.btngrad:hover {
+  background-position: right center;
+} */

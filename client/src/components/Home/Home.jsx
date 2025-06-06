@@ -73,38 +73,17 @@ function Home() {
 
   return (
     <div className="contenedorPadre">
-      <header className="header">
-        <div className="title">
-          <div className="search">
-            <SearchBar />
-          </div>
-          <div>
-            <Link to="/CreateDog" className="btngrad">
-              <span>CREAR PERRO🐶</span>
-            </Link>
-          </div>
-        </div>
-      </header>
-      <div className="functional">
-        <div className="filters">
-          <Filter
-            temperaments={temperaments}
-            handleSort={handleSort}
-            handleSortWeight={handleSortWeight}
-            handleFilterDog={handleFilterDog}
-            handleFilterCreated={handleFilterCreated}
-            handleReset={handleReset}
-          />
-        </div>
-      </div>
-      <div className="paginado">
-        <Paginado
-          dogsPerPage={dogsPerPage}
-          allDogs={allDogs.length}
-          paginado={paginado}
-           currentPage={currentPage}  
-        />
-      </div>
+    <div className="filterGridContainer">
+  <Filter
+    temperaments={temperaments}
+    handleSort={handleSort}
+    handleSortWeight={handleSortWeight}
+    handleFilterDog={handleFilterDog}
+    handleFilterCreated={handleFilterCreated}
+    handleReset={handleReset}
+  />
+</div>
+
       <main className="main">
         <div className="cards">
           {loading ? (
@@ -125,13 +104,14 @@ function Home() {
             <Error />
           )}
         </div>
-        <div className="paginado">
-          <Paginado
-            dogsPerPage={dogsPerPage}
-            allDogs={allDogs.length}
-            paginado={paginado}
-          />
-        </div>
+       <div className="paginado">
+        <Paginado
+          dogsPerPage={dogsPerPage}
+          allDogs={allDogs.length}
+          paginado={paginado}
+           currentPage={currentPage}  
+        />
+      </div>
       </main>
     </div>
   );
