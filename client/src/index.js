@@ -10,7 +10,9 @@ import store from './Redux/Store.js';
 import './variables.css';
 
 // Configuración de la baseURL para Axios:
-axios.defaults.baseURL =  "http://localhost:3001";
+axios.defaults.baseURL = process.env.NODE_ENV === "development"
+  ? "http://localhost:3001"
+  : process.env.REACT_APP_API;
 
 ReactDOM.render(
   <React.StrictMode>
