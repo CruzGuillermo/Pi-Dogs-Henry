@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="App">
-       <Navbar />
+        {location.pathname === '/home' && <Navbar />}
 
       <Route exact path="/" component={LandingPage} />
       <Route exact path="/home" component={Home} />
