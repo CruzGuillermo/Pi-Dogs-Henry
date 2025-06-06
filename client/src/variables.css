@@ -1,0 +1,54 @@
+/* variables.css */
+
+/* Variables globales para modo claro */
+:root {
+  --color-primary: #4A90E2;
+  --color-secondary: #F5A623;
+  --color-background: #FFFFFF;
+  --color-text-primary: #333333;
+  --color-text-secondary: #666666;
+  --color-text-on-dark: #FFFFFF; /* ✅ Nueva variable para texto sobre fondos oscuros */
+  --color-border: #E0E0E0;
+  --color-success: #4CAF50;
+  --color-error: #D0021B;
+
+  --font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-family-accent: 'Itim', cursive; /* ✅ Fuente especial */
+  --font-size-base: 16px;
+  --font-size-sm: 14px;
+  --font-size-lg: 20px;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-width: 1px;
+
+  --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.12);
+  --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.15);
+  --shadow-heavy: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Variables para modo oscuro */
+[data-theme="dark"] {
+  --color-primary: #7BAAF7;
+  --color-secondary: #F8B86C;
+  --color-background: #121212;
+  --color-text-primary: #E0E0E0;
+  --color-text-secondary: #A0A0A0;
+  --color-text-on-dark: #FFFFFF; /* ✅ También aquí */
+  --color-border: #2C2C2C;
+  --color-success: #81C784;
+  --color-error: #EF5350;
+
+  --shadow-light: 0 1px 3px rgba(255, 255, 255, 0.1);
+  --shadow-medium: 0 4px 6px rgba(255, 255, 255, 0.15);
+  --shadow-heavy: 0 10px 20px rgba(255, 255, 255, 0.2);
+}

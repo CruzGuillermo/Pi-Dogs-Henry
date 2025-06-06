@@ -1,8 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Dogs from "../Dogs/Dogs";
-import logo from "../image/logo.png";
 import Loading from "../Loading/Loading";
 import {
   getDogs,
@@ -12,13 +11,13 @@ import {
   filterDogTemperaments,
   filterCreated,
 } from "../../Redux/Actions.js";
-import { useEffect } from "react";
 import SearchBar from "../SearchBar/SearchBar";
 import Paginado from "../Paginado/Paginado";
 import Filter from "../Filter/Filter";
 import { Link } from "react-router-dom";
-import s from "./Home.module.css";
 import Error from "../Error/Error";
+import './Home.css';
+
 
 function Home() {
   const [orden, setOrden] = useState("");
@@ -73,24 +72,21 @@ function Home() {
   }
 
   return (
-    <div className={s.contenedorPadre}>
-      <header className={s.header}>
-        <div className={s.title}>
-          <Link to={"/home"}>
-            <img alt="logo" src={logo} className={s.logo} />
-          </Link>
-          <div className={s.search}>
+    <div className="contenedorPadre">
+      <header className="header">
+        <div className="title">
+          <div className="search">
             <SearchBar />
           </div>
           <div>
-            <Link to="/CreateDog" className={s.btngrad}>
+            <Link to="/CreateDog" className="btngrad">
               <span>CREAR PERRO🐶</span>
             </Link>
           </div>
         </div>
       </header>
-      <div className={s.functional}>
-        <div className={s.filters}>
+      <div className="functional">
+        <div className="filters">
           <Filter
             temperaments={temperaments}
             handleSort={handleSort}
@@ -101,15 +97,16 @@ function Home() {
           />
         </div>
       </div>
-      <div className={s.paginado}>
+      <div className="paginado">
         <Paginado
           dogsPerPage={dogsPerPage}
           allDogs={allDogs.length}
           paginado={paginado}
+           currentPage={currentPage}  
         />
       </div>
-      <main className={s.main}>
-        <div className={s.cards}>
+      <main className="main">
+        <div className="cards">
           {loading ? (
             <Loading />
           ) : currentDogs.length > 0 ? (
@@ -128,7 +125,7 @@ function Home() {
             <Error />
           )}
         </div>
-        <div className={s.paginado}>
+        <div className="paginado">
           <Paginado
             dogsPerPage={dogsPerPage}
             allDogs={allDogs.length}

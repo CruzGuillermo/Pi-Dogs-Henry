@@ -7,9 +7,10 @@ import { BrowserRouter } from "react-router-dom"
 import { Provider } from 'react-redux';
 import axios from "axios";
 import store from './Redux/Store.js';
+import './variables.css';
 
 // Configuración de la baseURL para Axios:
-axios.defaults.baseURL = process.env.REACT_APP_API || "http://localhost:3001";
+axios.defaults.baseURL =  "http://localhost:3001";
 
 ReactDOM.render(
   <React.StrictMode>

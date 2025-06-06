@@ -1,111 +1,112 @@
-@import url('https://fonts.googleapis.com/css2?family=Itim&family=Mitr&family=Pangolin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
 .container {
   width: 100vw;
   height: 100vh;
   display: flex;
   background-image: url("../image/landing3.jpg");
   background-size: cover;
+  background-position: center;
   justify-content: center;
+  align-items: center;
+  padding: var(--spacing-lg);
+  box-sizing: border-box;
 }
-.container2{
-  justify-content: center;
+
+.container2 {
+  width: 100%;
+  max-width: 800px;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-lg);
+  color: var(--color-text-on-dark); /* Texto claro siempre visible */
+  font-family: var(--font-family-accent); /* Itim definida globalmente */
+  box-shadow: var(--shadow-heavy);
   text-align: center;
-  width: 110vh;
-  height: 80vh;
-  border: 1px solid #000;
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.979);
-  color: white;
-  background-color: rgba(0, 0, 0, .8);
-  font-family: 'Itim', cursive;
-  margin: 50px;
+}
+
+.letras {
+  font-size: 1.5rem;
+  margin: var(--spacing-sm) 0;
+  color: var(--color-text-on-dark); /* Texto claro */
+  font-family: var(--font-family-accent);
 }
 
 .btnContainer {
+  margin-top: var(--spacing-lg);
   display: flex;
   justify-content: center;
-  align-items: center;
-  
-}
-.letras{
-  font-family: 'Itim', cursive;
-  margin: 30px;
-  font-size: 30px;
 }
 
 .button {
- width: 500px;
+  padding: var(--spacing-sm) var(--spacing-xl);
+  font-size: 1rem;
+  border-radius: var(--border-radius-sm);
+  border: 2px solid var(--color-primary);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--color-text-on-dark); /* Texto claro */
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   position: relative;
   cursor: pointer;
-  padding: 10px 20px;
-  border-radius: 7px;
-  border: 1px solid rgb(61, 106, 255);
-  font-size: 14px;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 2px;
-  /* background: transparent; */
-  color: #fff;
-  background-color: rgba(0, 0, 0, .5);
-  overflow: hidden;
-  box-shadow: 0 0 0 0 transparent;
-  -webkit-transition: all 0.2s ease-in;
-  -moz-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
+  transition: all 0.3s ease;
 }
 
 .button:hover {
-  background: rgb(61, 106, 255);
-  box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
-}
-
-.button:hover::before {
-  -webkit-animation: sh02 0.5s 0s linear;
-  -moz-animation: sh02 0.5s 0s linear;
-  animation: sh02 0.5s 0s linear;
+  background-color: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 0 20px var(--color-primary);
 }
 
 .button::before {
   content: '';
-  display: block;
-  width: 0px;
-  height: 86%;
   position: absolute;
-  top: 7%;
-  left: 0%;
-  opacity: 0;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
   background: #fff;
-  box-shadow: 0 0 50px 30px #fff;
-  -webkit-transform: skewX(-20deg);
-  -moz-transform: skewX(-20deg);
-  -ms-transform: skewX(-20deg);
-  -o-transform: skewX(-20deg);
+  opacity: 0.2;
   transform: skewX(-20deg);
+  transition: width 0.3s ease;
+  z-index: 0;
 }
 
-@keyframes sh02 {
-  from {
-    opacity: 0;
-    left: 0%;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-    left: 100%;
-  }
+.button:hover::before {
+  width: 100%;
 }
 
 .button:active {
-  box-shadow: 0 0 0 0 transparent;
-  -webkit-transition: box-shadow 0.2s ease-in;
-  -moz-transition: box-shadow 0.2s ease-in;
-  transition: box-shadow 0.2s ease-in;
+  transform: scale(0.98);
+}
+
+/* Responsive: Tablets y móviles */
+@media (max-width: 768px) {
+  .container2 {
+    padding: var(--spacing-md);
+  }
+
+  .letras {
+    font-size: 1.2rem;
+  }
+
+  .button {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container2 {
+    max-width: 90%;
+  }
+
+  .letras {
+    font-size: 1rem;
+  }
+
+  .button {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
 }
